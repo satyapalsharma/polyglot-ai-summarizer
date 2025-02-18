@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    // Target latest ECMAScript features for modern browsers, but Next.js will transpile down to ES5 for broader compatibility.
+    "target": "es5",
+    // Specify library files to be included in the compilation.
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // Allow JavaScript files to be compiled.
+    "allowJs": true,
+    // Skip type checking of all declaration files (*.d.ts). This can speed up compilation.
+    "skipLibCheck": true,
+    // Enable all strict type-checking options. Recommended for production-quality code.
+    "strict": true,
+    // Disallow inconsistently-cased references to the same file.
+    "forceConsistentCasingInFileNames": true,
+    // Do not emit compiler output files like JavaScript files. Next.js handles this.
+    "noEmit": true,
+    // Allow default imports from modules with no default export. This enables a cleaner import syntax.
+    "esModuleInterop": true,
+    // Specify module code generation: 'esnext' for modern module systems.
+    "module": "esnext",
+    // Specify how modules are resolved. 'node' for Node.js-style resolution.
+    "moduleResolution": "node",
+    // Enable importing .json files.
+    "resolveJsonModule": true,
+    // Ensure that each file can be safely transpiled without relying on other imports.
+    "isolatedModules": true,
+    // Specify JSX code generation: 'preserve' for Next.js to handle JSX transformation.
+    "jsx": "preserve",
+    // Specify the base URL to resolve non-relative module names.
+    "baseUrl": ".",
+    // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+    // This allows using absolute paths like `@/components/MyComponent` instead of `../../components/MyComponent`.
+    "paths": {
+      "@/*": ["./*"]
+    },
+    // Enable incremental compilation for faster rebuilds.
+    "incremental": true,
+    // Next.js specific TypeScript plugin.
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  // Files to include in the compilation.
+  "include": [
+    "next-env.d.ts", // Next.js environment type definitions.
+    "**/*.ts",       // All TypeScript files.
+    "**/*.tsx",      // All TypeScript React files.
+    "**/*.js",       // All JavaScript files (if allowJs is true).
+    "**/*.jsx"       // All JavaScript React files (if allowJs is true).
+  ],
+  // Files to exclude from the compilation.
+  "exclude": [
+    "node_modules"   // Standard exclusion for installed packages.
+  ]
+}

@@ -1,0 +1,33 @@
+# Python dependencies for the Polyglot AI Summarizer backend.
+# This file lists the libraries required for the NLP service,
+# including web framework, NLP models, and utility libraries.
+
+# Web Framework and ASGI Server
+# FastAPI: A modern, fast (high-performance) web framework for building APIs with Python 3.7+
+# Uvicorn: An ASGI server, necessary to run FastAPI applications.
+fastapi
+uvicorn[standard]
+
+# Natural Language Processing (NLP) Libraries
+# transformers: Hugging Face's state-of-the-art NLP library for pre-trained models
+#               (e.g., summarization, translation).
+# torch: PyTorch deep learning framework, often used as the backend for transformers models.
+# sentencepiece: A dependency for many transformer models, especially for tokenization.
+transformers
+torch
+sentencepiece
+
+# Web Scraping and Content Extraction (for URL inputs)
+# requests: HTTP library for making requests to fetch content from URLs.
+# beautifulsoup4: Library for parsing HTML and XML documents, useful for extracting text from web pages.
+# lxml: A fast XML/HTML parser, often used as a backend for beautifulsoup4.
+requests
+beautifulsoup4
+lxml
+
+# Configuration and Environment Management
+# python-dotenv: Reads key-value pairs from a .env file and sets them as environment variables.
+# pydantic: Data validation and settings management using Python type hints.
+#           Often used with FastAPI for request body validation and settings.
+python-dotenv
+pydantic
