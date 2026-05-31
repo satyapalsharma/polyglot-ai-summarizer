@@ -1,0 +1,304 @@
+:root {
+  /* Color Palette */
+  --color-primary: #0070f3; /* A vibrant blue for primary actions/highlights */
+  --color-secondary: #1a202c; /* Dark grey for text, backgrounds */
+  --color-accent: #61dafb; /* React blue for accents */
+  --color-text-light: #f8f8f8; /* Light text on dark backgrounds */
+  --color-text-dark: #2d3748; /* Dark text on light backgrounds */
+  --color-background-light: #ffffff; /* White background */
+  --color-background-dark: #1a202c; /* Dark background */
+  --color-border: #e2e8f0; /* Light grey for borders */
+  --color-success: #48bb78; /* Green for success messages */
+  --color-error: #ef4444; /* Red for error messages */
+
+  /* Typography */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+
+  --line-height-base: 1.5;
+  --line-height-heading: 1.2;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.5rem; /* 8px */
+  --border-radius-lg: 0.75rem; /* 12px */
+
+  /* Box Shadow */
+  --box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Variables (overrides for dark theme) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-light: #e2e8f0;
+    --color-text-dark: #f8f8f8;
+    --color-background-light: #2d3748;
+    --color-background-dark: #1a202c;
+    --color-border: #4a5568;
+    --color-secondary: #e2e8f0; /* Adjust for better contrast in dark mode */
+  }
+}
+
+/*
+  1. Use a more intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin and padding.
+*/
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  3. Set core root defaults.
+*/
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font size inflation */
+  scroll-behavior: smooth;
+  font-size: var(--font-size-base); /* Base font size */
+}
+
+/*
+  4. Set core body defaults.
+*/
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-background-light);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+}
+
+/*
+  5. Make images easier to work with.
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles.
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows.
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context.
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  9. Accessibility: Hide content visually but keep it accessible to screen readers.
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*
+  10. Basic Link Styling
+*/
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*
+  11. Headings
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-dark);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-md); }
+
+/*
+  12. Lists
+*/
+ul, ol {
+  list-style: none; /* Remove default list styles */
+}
+
+/*
+  13. Buttons
+*/
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+/*
+  14. Form Elements
+*/
+input[type="text"],
+input[type="url"],
+textarea {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2); /* Focus ring */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/*
+  15. Utility Classes (minimal, for global use)
+*/
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+/* Additional styles for Next.js specific elements if needed */
+/* For example, if you use `next/image` and want to ensure it's responsive */
+.next-image-wrapper img {
+  height: auto;
+}
